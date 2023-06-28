@@ -1,0 +1,21 @@
+SPRINGBOOT3
+dependence
+spring-boot-starter-actuator
+
+1-Actuator-endpoints:
+/info, /health
+/auditevents
+/beans
+/mappings
+outros: www.luv2code.com/actuator-endpoints
+Todos:  management.endpoints.web.exposure.include=*
+ex: actuator/health: {"status":"UP"}
+
+Expor endpoints em application.properties: 
+management.endpoints.web.exposure.include=health, info
+management.info.env.enabled=true
+
+/info:
+
+info.app.name =My Super Cool App
+  
