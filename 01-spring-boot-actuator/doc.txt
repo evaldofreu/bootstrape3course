@@ -19,3 +19,8 @@ management.info.env.enabled=true
 
 info.app.name =My Super Cool App
   
+  
+2- spring-security
+spring.security.user.name=evaldo
+spring.security.user.password=123
+  
