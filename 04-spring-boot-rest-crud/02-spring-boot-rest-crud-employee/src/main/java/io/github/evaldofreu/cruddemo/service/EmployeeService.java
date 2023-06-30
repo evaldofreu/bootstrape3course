@@ -1,12 +1,13 @@
-package io.github.evaldofreu.cruddemo.dao;
+package io.github.evaldofreu.cruddemo.service;
 
 import io.github.evaldofreu.cruddemo.entity.Employee;
 
 import java.util.List;
 
-public interface EmployeeDAO {
-    // list all employees
-    public List<Employee> findAll();
+public interface EmployeeService
+{
+    List<Employee> findAll();
+
 
     public Employee findById(int id);
     //Add or update employee
@@ -15,5 +16,5 @@ public interface EmployeeDAO {
     public void deleteById(int id);
 
 
-
 }
+

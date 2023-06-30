@@ -4,6 +4,7 @@ import io.github.evaldofreu.cruddemo.entity.Employee;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,5 +28,23 @@ public class EmployeeDAOImpl implements  EmployeeDAO{
         List<Employee> employeeList = query.getResultList();
         // return the results
         return employeeList;
+    }
+
+    @Override
+    public Employee findById(int id) {
+        Employee employee = entityManager.find(Employee.class, id);
+        return employee;
+    }
+
+    @Override
+    public Employee save(Employee employee) {
+        Employee saved = entityManager.merge(employee);
+        return saved;
+    }
+
+    @Override
+    public void deleteById(int id) {
+        Employee employee = findById(id);
+        entityManager.remove(employee);
     }
 }
